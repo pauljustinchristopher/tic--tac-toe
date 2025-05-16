@@ -70,7 +70,6 @@ h1 {
     position: relative;
     z-index: 1;
     user-select: none;
-    /* Remove all borders here */
     border: none;
 }
 
@@ -159,7 +158,9 @@ button:hover {
     text-align: center;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
+ 
 
+/* ADJUST */
 .symbol-choice {
     font-size: 2em;
     margin: 0 18px;
