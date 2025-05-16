@@ -13,6 +13,11 @@
             <p id="current-player">Current Player: X</p>
             <p id="game-result"></p>
         </div>
+        <div class="scoreboard">
+            <span id="score-x">X: 0</span>
+            <span id="score-o">O: 0</span>
+            <span id="score-draw">Draws: 0</span>
+        </div>
         <div class="game-board">
             <div class="cell" data-cell-index="0"></div>
             <div class="cell" data-cell-index="1"></div>
@@ -25,6 +30,15 @@
             <div class="cell" data-cell-index="8"></div>
         </div>
         <button id="restart-button">Restart Game</button>
+        <button id="mode-button">Switch to AI</button>
+    </div>
+    <!-- Symbol selection modal -->
+    <div id="symbol-modal" class="modal">
+        <div class="modal-content">
+            <h2>Choose Your Symbol</h2>
+            <button class="symbol-choice" data-symbol="X">X</button>
+            <button class="symbol-choice" data-symbol="O">O</button>
+        </div>
     </div>
     <script src="index.js"></script>
 </body>

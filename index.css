@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #1ca3c6; /* blue background */
+    background: #1ca3c6;
     margin: 0;
 }
 
@@ -17,6 +17,11 @@ body {
     padding: 40px 30px 30px 30px;
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
@@ -24,6 +29,23 @@ h1 {
     margin-bottom: 20px;
     color: #fff;
     text-shadow: 2px 2px 8px #0006;
+}
+
+.game-status {
+    margin-bottom: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 4px #0006;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 18px;
+    color: #fff;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 4px #0006;
 }
 
 .game-board {
@@ -35,26 +57,32 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 4px 16px #0004;
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 .cell {
     width: 80px;
     height: 80px;
     background: transparent;
-    border: 2px solid #222;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2.8em;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
     position: relative;
     z-index: 1;
+    user-select: none;
+    /* Remove all borders here */
+    border: none;
 }
 
+/* Add only right border except for last column */
 .cell:not(:nth-child(3n)) {
     border-right: 2px solid #444;
 }
+/* Add only bottom border except for last row */
 .cell:not(:nth-last-child(-n+3)) {
     border-bottom: 2px solid #444;
 }
@@ -63,12 +91,20 @@ h1 {
     color: orange;
     text-shadow: 2px 2px 0 #b36b00, 4px 4px 8px #0008;
     font-weight: bold;
+    animation: pop 0.3s;
 }
 
 .cell.o {
     color: red;
     text-shadow: 2px 2px 0 #800, 4px 4px 8px #0008;
     font-weight: bold;
+    animation: pop 0.3s;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.5); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
 .win-line {
@@ -79,10 +115,12 @@ h1 {
     z-index: 2;
     box-shadow: 0 2px 8px #0008;
     pointer-events: none;
+    transition: width 0.4s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
 button {
-    margin-top: 25px;
+    margin-top: 18px;
+    margin-right: 8px;
     padding: 12px 28px;
     font-size: 1.1em;
     cursor: pointer;
@@ -91,18 +129,55 @@ button {
     border: none;
     border-radius: 8px;
     box-shadow: 0 2px 8px #0003;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
     font-weight: bold;
 }
 
 button:hover {
     background: #e65100;
+    transform: scale(1.05);
 }
 
-.game-status {
-    margin-bottom: 18px;
-    color: #fff;
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
     text-align: center;
-    font-size: 1.2em;
-    text-shadow: 1px 1px 4px #0006;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.symbol-choice {
+    font-size: 2em;
+    margin: 0 18px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    background: #1ca3c6;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #0003;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.symbol-choice:hover {
+    background: #ff9800;
+    transform: scale(1.1);
 }
