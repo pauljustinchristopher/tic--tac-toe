@@ -44,7 +44,7 @@ symbolChoices.forEach(btn => {
     btn.onclick = () => {
         playerSymbol = btn.dataset.symbol;
         aiSymbol = playerSymbol === 'X' ? 'O' : 'X';
-        currentPlayer = 'X';
+        currentPlayer = playerSymbol; // <-- Start with the chosen symbol
         restartGame();
         hideSymbolModal();
     };
@@ -108,7 +108,7 @@ function checkResult() {
 
 function restartGame() {
     isGameActive = true;
-    currentPlayer = 'X';
+    currentPlayer = playerSymbol; // <-- Always start with the chosen symbol
     board = ['', '', '', '', '', '', '', '', ''];
     currentPlayerDisplay.textContent = `Current Player: ${currentPlayer}`;
     gameResultDisplay.textContent = '';
@@ -121,7 +121,8 @@ function restartGame() {
         winLineEl.remove();
         winLineEl = null;
     }
-    if (isSinglePlayer && currentPlayer !== playerSymbol) {
+    // If single player and AI goes first, let AI play
+    if (isSinglePlayer && currentPlayer === aiSymbol) {
         setTimeout(aiMove, 400);
     }
 }
