@@ -1,36 +1,33 @@
 # Tic-Tac-Toe Game
 
-This is a simple Tic-Tac-Toe game built using HTML, CSS, and JavaScript. The game allows two players to take turns marking the spaces in a 3×3 grid with their respective symbols (X and O). The first player to align three of their symbols horizontally, vertically, or diagonally wins the game.
+This is a feature-rich Tic-Tac-Toe game built using HTML, CSS, and JavaScript. The game supports both two-player and single-player (AI) modes, allows players to choose their symbol (X or O), and keeps track of scores for X, O, and draws. The design includes smooth animations, a modern interface, and a clear win line when a player wins.
+
+## Features
+
+- Play against another player or an unbeatable AI opponent (minimax algorithm).
+- Choose your symbol (X or O) before starting.
+- Animated, colorful, and responsive design.
+- Scoreboard tracks wins for X, O, and draws.
+- Clear win line highlights the winning combination.
+- Restart and mode-switch buttons for easy control.
 
 ## Project Structure
 
 ```
 tic-tac-toe
-├── src
-│   ├── index.html      # The structure of the Tic-Tac-Toe game
-│   ├── index.css       # Styles for the game
-│   └── index.js        # JavaScript logic for game mechanics
-└── README.md           # Documentation for the project
+├── index.html      # Game structure and UI
+├── index.css       # Game styles and animations
+├── index.js        # Game logic, AI, and interactivity
+└── README.md       # Project documentation
 ```
 
 ## How to Play
 
-1. Open the `index.html` file in your web browser.
-2. Players take turns clicking on the empty cells of the grid to place their symbols.
-3. The game will announce the current player's turn and the result of the game (win or draw).
-4. Click the "Restart" button to reset the game and play again.
-
-## Setup Instructions
-
-1. Clone the repository or download the project files.
-2. Navigate to the `src` directory.
-3. Open `index.html` in your preferred web browser to start playing.
-
-## Future Enhancements
-
-- Add an AI opponent for single-player mode.
-- Implement a scoring system to keep track of wins.
-- Enhance the visual design with animations and transitions.
-- Allow players to choose their symbols (X or O).
+1. Open `index.html` in your web browser.
+2. Choose your symbol (X or O) in the modal dialog.
+3. Select single-player (AI) or two-player mode.
+4. Take turns clicking on the grid to place your symbol.
+5. The game will announce the winner or a draw, and update the scoreboard.
+6. Click "Restart Game" to play again, or "Switch to AI/2-Player" to change modes.
 
 Enjoy playing Tic-Tac-Toe!
