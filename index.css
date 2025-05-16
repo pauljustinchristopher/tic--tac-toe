@@ -1,0 +1,108 @@
+/* filepath: c:\Users\paulj\Desktop\Gomycode\tic-tac-toe tutorial\index.css */
+
+/* Modern, colorful, shadowed Tic-Tac-Toe */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #1ca3c6; /* blue background */
+    margin: 0;
+}
+
+.container {
+    background: rgba(255,255,255,0.05);
+    padding: 40px 30px 30px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 8px #0006;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 0;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px #0004;
+    position: relative;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border: 2px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8em;
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+    z-index: 1;
+}
+
+.cell:not(:nth-child(3n)) {
+    border-right: 2px solid #444;
+}
+.cell:not(:nth-last-child(-n+3)) {
+    border-bottom: 2px solid #444;
+}
+
+.cell.x {
+    color: orange;
+    text-shadow: 2px 2px 0 #b36b00, 4px 4px 8px #0008;
+    font-weight: bold;
+}
+
+.cell.o {
+    color: red;
+    text-shadow: 2px 2px 0 #800, 4px 4px 8px #0008;
+    font-weight: bold;
+}
+
+.win-line {
+    position: absolute;
+    height: 6px;
+    background: #0e0e0e;
+    border-radius: 3px;
+    z-index: 2;
+    box-shadow: 0 2px 8px #0008;
+    pointer-events: none;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 28px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background: #ff9800;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0003;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #e65100;
+}
+
+.game-status {
+    margin-bottom: 18px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 4px #0006;
+}
