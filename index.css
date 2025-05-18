@@ -1,30 +1,33 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
+    font-family: Arial, sans-serif; /* Sets font */
+    display: flex; /* Center content horizontally */
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #1ca3c6;
-    margin: 0;
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    background: #1ca3c6; /* Blue background */
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Prevent scrollbars */
 }
 
 .container {
-    background: rgba(255,255,255,0.05);
-    padding: 40px 30px 30px 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background: rgba(255,255,255,0.05); /* Slightly transparent white */
+    padding: 24px 30px; /* Reduce vertical padding */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Soft shadow */
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    max-height: 100vh; /* Prevent container from exceeding viewport */
+    overflow: auto;    /* Scroll inside container if needed */
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
     color: #fff;
-    text-shadow: 2px 2px 8px #0006;
+    text-shadow: 2px 2px 8px #0006; /* Soft shadow for text */
 }
 
 .game-status {
@@ -46,8 +49,8 @@ h1 {
 
 .game-board {
     display: grid;
-    grid-template-columns: repeat(3, 80px);
-    grid-template-rows: repeat(3, 80px);
+    grid-template-columns: repeat(3, 80px); /* 3 columns, 80px each */
+    grid-template-rows: repeat(3, 80px);    /* 3 rows, 80px each */
     gap: 0;
     background: #222;
     border-radius: 10px;
@@ -70,7 +73,7 @@ h1 {
     position: relative;
     z-index: 1;
     user-select: none;
-    border: none;
+    border: none; /* Remove default border */
 }
 
 /* Add only right border except for last column */
@@ -86,7 +89,7 @@ h1 {
     color: orange;
     text-shadow: 2px 2px 0 #b36b00, 4px 4px 8px #0008;
     font-weight: bold;
-    animation: pop 0.3s;
+    animation: pop 0.3s; /* Pop animation on appearance */
 }
 
 .cell.o {
@@ -110,7 +113,7 @@ h1 {
     z-index: 2;
     box-shadow: 0 2px 8px #0008;
     pointer-events: none;
-    transition: width 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+    transition: width 0.4s cubic-bezier(.68,-0.55,.27,1.55); /* Animate line */
 }
 
 button {
@@ -138,7 +141,7 @@ button:hover {
     position: fixed;
     z-index: 10;
     left: 0; top: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.4); /* Semi-transparent overlay */
     align-items: center;
     justify-content: center;
     visibility: hidden;
@@ -159,8 +162,6 @@ button:hover {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
  
-
-/* ADJUST */
 .symbol-choice {
     font-size: 2em;
     margin: 0 18px;

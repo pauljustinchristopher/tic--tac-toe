@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="index.css"> 
+    <title>Tic-Tac-Toe</title> 
 </head>
 <body>
-    <div class="container">
-        <h1>Tic-Tac-Toe</h1>
-        <div class="game-status">
-            <p id="current-player">Current Player: X</p>
-            <p id="game-result"></p>
+    <div class="container"> <!-- Main game container -->
+        <h1>Tic-Tac-Toe</h1> <!-- Game title -->
+        <div class="game-status"> <!-- Shows current player and result -->
+            <p id="current-player">Current Player: X</p> <!-- Current player display -->
+            <p id="game-result"></p> <!-- Game result display -->
         </div>
-        <div class="scoreboard">
+        <div class="scoreboard"> <!-- Scoreboard for X, O, and draws -->
             <span id="score-x">X: 0</span>
             <span id="score-o">O: 0</span>
             <span id="score-draw">Draws: 0</span>
         </div>
-        <div class="game-board">
-            <div class="cell" data-cell-index="0"></div>
+        <div class="game-board"> <!-- 3x3 grid for the game -->
+            <div class="cell" data-cell-index="0"></div> <!-- Each cell has a unique index -->
             <div class="cell" data-cell-index="1"></div>
             <div class="cell" data-cell-index="2"></div>
             <div class="cell" data-cell-index="3"></div>
@@ -29,17 +29,17 @@
             <div class="cell" data-cell-index="7"></div>
             <div class="cell" data-cell-index="8"></div>
         </div>
-        <button id="restart-button">Restart Game</button>
-        <button id="mode-button">Switch to AI</button>
+        <button id="restart-button">Restart Game</button> <!-- Button to restart game -->
+        <button id="mode-button">Switch to AI</button> <!-- Button to switch mode -->
     </div>
-    <!-- Symbol selection modal -->
+    <!-- Symbol selection modal (hidden by default) -->
     <div id="symbol-modal" class="modal">
         <div class="modal-content">
             <h2>Choose Your Symbol</h2>
-            <button class="symbol-choice" data-symbol="X">X</button>
-            <button class="symbol-choice" data-symbol="O">O</button>
+            <button class="symbol-choice" data-symbol="X">X</button> <!-- X symbol choice -->
+            <button class="symbol-choice" data-symbol="O">O</button> <!-- O symbol choice -->
         </div>
     </div>
-    <script src="index.js"></script>
+    <script src="index.js"></script> <!-- Link to JS file -->
 </body>
 </html>
