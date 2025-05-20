@@ -20,7 +20,7 @@ body {
     align-items: center; /* Center children horizontally */
     justify-content: center; /* Center children vertically */
     max-height: 100vh; /* Prevent container from exceeding viewport */
-    overflow: auto;    /* Scroll inside container if needed */
+    /* overflow: auto;    Scroll inside container if needed */
 }
 
 h1 {
@@ -108,10 +108,11 @@ h1 {
 .win-line {
     position: absolute;
     height: 6px;
-    background: #0e0e0e;
-    border-radius: 3px;
+    background: #fff;
+    border-radius: 5px;
     z-index: 2;
-    box-shadow: 0 2px 8px #0008;
+    left: 0;
+    top: 0;
     pointer-events: none;
     transition: width 0.4s cubic-bezier(.68,-0.55,.27,1.55); /* Animate line */
 }
@@ -156,7 +157,7 @@ button:hover {
 
 .modal-content {
     background: #fff;
-    padding: 30px 40px;
+    padding: 25px 30px;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);

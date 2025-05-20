@@ -158,16 +158,23 @@ function drawWinLine(winIndex) {
     const startY = y1 * cellSize + offset;
     const endX = x2 * cellSize + offset;
     const endY = y2 * cellSize + offset;
-    const length = Math.sqrt((endX - startX)**2 + (endY - startY)**2);
+    const extra = 40; // Try 40px extra (20px before start, 20px after end)
+    const length = Math.sqrt((endX - startX)**2 + (endY - startY)**2) + extra;
+
     const angle = Math.atan2(endY - startY, endX - startX) * 180 / Math.PI;
+
+    // Shift the start point back by extra/2 along the line direction
+    const shiftX = Math.cos(Math.atan2(endY - startY, endX - startX)) * (extra / 2);
+    const shiftY = Math.sin(Math.atan2(endY - startY, endX - startX)) * (extra / 2);
 
     winLineEl = document.createElement('div');
     winLineEl.className = 'win-line';
     winLineEl.style.width = `0px`; // Start at 0 for animation
-    winLineEl.style.left = `${startX}px`;
-    winLineEl.style.top = `${startY}px`;
-    winLineEl.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
-    winLineEl.style.background = '#222';
+    winLineEl.style.left = `${startX - shiftX}px`;
+    winLineEl.style.top = `${startY - shiftY}px`;
+    winLineEl.style.transform = `rotate(${angle}deg)`;
+    winLineEl.style.transformOrigin = '0 50%';
+
     gameBoard.appendChild(winLineEl);
 
     setTimeout(() => {
