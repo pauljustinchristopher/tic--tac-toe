@@ -23,11 +23,17 @@ body {
     /* overflow: auto;    Scroll inside container if needed */
 }
 
-h1 {
+.title {
     text-align: center;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 8px #0006; /* Soft shadow for text */
+    margin-bottom: 5px;
+    margin-top: 0;
+    /* Gradient using only orange and red */
+    background: linear-gradient(90deg, #ff9800 0%, #e53935 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none; /* Remove shadow for a clean gradient look */
 }
 
 .game-status {
@@ -41,7 +47,7 @@ h1 {
 .scoreboard {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 18px;
+    margin-bottom: 5px;
     color: #fff;
     font-size: 1.1em;
     text-shadow: 1px 1px 4px #0006;
@@ -182,3 +188,27 @@ button:hover {
     background: #ff9800;
     transform: scale(1.1);
 }
+
+#reset-scores-button {
+    margin-bottom: 12px;
+    margin-top: 0;
+    background: #e53935;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #0003;
+    transition: background 0.3s, transform 0.2s;
+}
+#reset-scores-button:hover {
+    background: #b71c1c;
+    transform: scale(1.05);
+}
+
+#current-player, #game-result {
+    margin:0;
+}
+

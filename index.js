@@ -10,6 +10,7 @@ const scoreO = document.getElementById('score-o');
 const scoreDraw = document.getElementById('score-draw');
 const symbolModal = document.getElementById('symbol-modal');
 const symbolChoices = document.querySelectorAll('.symbol-choice');
+const resetScoresButton = document.getElementById('reset-scores-button');
 
 // Game state variables
 let currentPlayer = 'X'; // Tracks whose turn it is
@@ -145,6 +146,8 @@ function updateScores() {
     scoreX.textContent = `X: ${scores.X}`;
     scoreO.textContent = `O: ${scores.O}`;
     scoreDraw.textContent = `Draws: ${scores.D}`;
+    // Save scores to localStorage
+    localStorage.setItem('tic-tac-toe-scores', JSON.stringify(scores));
 }
 
 // --- Win line animation ---
@@ -253,11 +256,22 @@ modeButton.onclick = () => {
     showSymbolModal(); // Ask for symbol again
 };
 
+resetScoresButton.addEventListener('click', () => {
+    scores = { X: 0, O: 0, D: 0 };
+    updateScores();
+});
+
 // Add event listeners for cell clicks and buttons
 cells.forEach(cell => cell.addEventListener('click', handleCellClick)); // Cell click
 restartButton.addEventListener('click', restartGame); // Restart button
 
 // --- Init ---
+// Load scores from localStorage if available
+const savedScores = localStorage.getItem('tic-tac-toe-scores');
+if (savedScores) {
+    scores = JSON.parse(savedScores);
+}
+
 // Show symbol selection modal and update scores on page load
 showSymbolModal();
 updateScores();
