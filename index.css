@@ -20,7 +20,6 @@ body {
     align-items: center; /* Center children horizontally */
     justify-content: center; /* Center children vertically */
     max-height: 100vh; /* Prevent container from exceeding viewport */
-    /* overflow: auto;    Scroll inside container if needed */
 }
 
 .title {
@@ -100,6 +99,20 @@ body {
     text-shadow: 2px 2px 0 #b36b00, 4px 4px 8px #0008;
     font-weight: bold;
     animation: pop 0.3s; /* Pop animation on appearance */
+}
+#score-x {
+    color: orange;
+}
+
+#score-o {
+    color: red
+}
+
+#score-draw {
+     background: linear-gradient(90deg, #ff9800 0%, #e53935 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .cell.o {
