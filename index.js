@@ -265,7 +265,6 @@ resetScoresButton.addEventListener('click', () => {
 cells.forEach(cell => cell.addEventListener('click', handleCellClick)); // Cell click
 restartButton.addEventListener('click', restartGame); // Restart button
 
-// --- Init ---
 // Load scores from localStorage if available
 const savedScores = localStorage.getItem('tic-tac-toe-scores');
 if (savedScores) {
