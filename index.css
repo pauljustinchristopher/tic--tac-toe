@@ -229,7 +229,7 @@ button:hover {
     margin:0;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .container {
         width: 98vw;
         min-width: 0;
@@ -263,5 +263,5 @@ button:hover {
         padding: 7px 8px;
         margin-top: 8px;
     }
-}
+} */
 
